@@ -34,7 +34,7 @@
     ?>
 
     <?php
-
+// Formulaire d'ajout d'user
 
     $msgMail = '';
     $alert = '';
@@ -86,7 +86,7 @@
 
 
     ?>
-
+<!-- Formualaire d'ajout -->
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#newUser">Ajouter un utilisateur</button>
 
     <form method="POST" class="collapse" id="newUser">
@@ -120,6 +120,7 @@
     <hr>
 
     <?php
+    // Suppression d'utilisateur 
     if(isset($_POST['confirm'])){
         $userId = strip_tags($_POST['id']);
 
