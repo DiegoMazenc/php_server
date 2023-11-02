@@ -21,6 +21,7 @@
             margin: 0 35%;
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
     ?>
 
     <?php
-
+// Modification des informations
     if (isset($_POST['modifier'])) {
         $new_firstname = strip_tags($_POST['firstname']);
         $new_name = strip_tags($_POST['name']);
@@ -96,6 +97,7 @@
         echo $sqlError;
     }
 
+    // Variables
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     $jourSemaine = date_format(date_create($user['dateCreate']), 'w');
     $month = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc');
@@ -115,6 +117,7 @@
     <p>Créé le <?= $dateFormat; ?> à <?= $dateCreate[1]; ?></p>
  <p>Inscrit depuis : <?= $compteurJour; ?> jours</p>
 
+<!-- Formulaire de modification -->
     <form method="POST">
         <label for="firstname">Votre prénom</label><br>
         <input type="text" name="firstname" value="<?= $user['firstname']; ?>"><br><br>
@@ -127,10 +130,11 @@
         <input type="submit" name="modifier" value="modifier">
     </form>
     
+    <!-- Afficher la MaJ User -->
     <p>MaJ le : <?= $user['dateUpdate']; ?></p>
 </div>
-    <a href="index.php">Revenir à l'accueil</a>
-
+    <a href="index.php" class="btn btn-primary" style="text-align: center;">Revenir à l'accueil</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
