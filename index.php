@@ -154,7 +154,7 @@
         <h3>
             <?= $users['firstname'] . " " . $users['name']  ?>
         </h3>
-        <a href="user.php?id=<?= $users['id'] ?>">voir les détailles</a>
+        <a href="user.php?id=<?= $users['id'] ?>" class="btn btn-primary">voir les détailles</a>
 
 
         <form method="POST">
